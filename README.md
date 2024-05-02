@@ -7,7 +7,7 @@ The main objectives is to achieve a reliable conversion from orthography to pron
 
 1. "I will read the book now" and 2. "Yesterday I read the book " are pronounced differently. In the first case it is [ri:d] and in the second case it is [rɛd]. 
 
-To showcase the need for a tool like this, entering google search, both the top hits "https://tophonetics.com/" and "http://www.photransedit.com/" fails to capture this difference, providing the following transcriptions: "jestədi ˈaɪ riːd ðə bʊk" and "jɛstədeɪ aɪ riːd ðə bʊk" - both being wrong. As these are rule based approaches, an AI approach that can take context into account will hopefull fare better.
+To showcase the need for a tool like this, entering "text to IPA" into google search, both the top hits "https://tophonetics.com/" and "http://www.photransedit.com/" fails to capture this difference, providing the following transcriptions: "jestədi ˈaɪ riːd ðə bʊk" and "jɛstədeɪ aɪ riːd ðə bʊk" - both being wrong. As these are rule based approaches, an AI approach that can take context into account will hopefull fare better.
 
 Being able to deploy such a model on large amounts of data would be usefull in the area typological and contrastive lingistic, particularly with regard to automatic similarity of language judgement, as it would allow for large scale calulations of phonological distance measurements between languages. It could also be usefull for anyone looking to learn a language, requiring an easy way to find the correct pronounciation.
 
