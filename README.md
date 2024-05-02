@@ -1,3 +1,5 @@
+# Project proposal / README
+
 This project was created as a captstone project for the course GenAI for Humanists in S2024 at the univeristy of Vienna. The aim of the project ist to create a pipline to translate documents
 into phonetic writing using the international phonetic alphabet (IPA) and emerging techniques from the of area generative AI and large language models. 
 
