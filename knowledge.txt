@@ -1,0 +1,4 @@
+https://arxiv.org/html/2404.11553v1 , https://arxiv.org/pdf/2404.11553
+Quantifying Multilingual Performance of Large Language Models Across Languages
+- creates a ranking for different LLM to see how they perform on multiple languages
+Best performer on relevant languages: LLama7b -> will be used for the project
