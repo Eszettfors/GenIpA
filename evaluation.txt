@@ -1,0 +1,6 @@
+Create labeled data for correct transcriptions. Calculate edit distance between output and labeled data.
+
+
+https://www.uni-hildesheim.de/media/fb3/deutsche_sprache/Mitglieder/Bredel/Uebungskompendium_Phonologie_WS_2010_2011.pdf
+Exercise with solution for transcribing texts to IPA
+
