@@ -4,40 +4,21 @@ import openai
 os.environ["OPENAI_API_KEY"] = "sk-proj-ati0Co2Vt8anHxAf9emxT3BlbkFJzBBqjuNyNos5W71ryVtc"
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
-import sys
 import shutil
-import glob
-import logging
-from pathlib import Path
 
 import warnings
 warnings.filterwarnings('ignore')
 
-import pandas as pd
 
 ## Llamaindex readers
 from llama_index.core import SimpleDirectoryReader
 
-## LlamaIndex Index Types
-from llama_index.core import ListIndex
-from llama_index.core import VectorStoreIndex
-from llama_index.core import TreeIndex
-from llama_index.core import KeywordTableIndex
-from llama_index.core import SimpleKeywordTableIndex
-from llama_index.core import DocumentSummaryIndex
-from llama_index.core import KnowledgeGraphIndex
-from llama_index.experimental.query_engine import PandasQueryEngine
 
 ## LlamaIndex Context Managers
 from llama_index.core import StorageContext
 from llama_index.core import load_index_from_storage
 from llama_index.core.response_synthesizers import get_response_synthesizer
-from llama_index.core.response_synthesizers import ResponseMode
-from llama_index.core.schema import Node
 
-## LlamaIndex Callbacks
-from llama_index.core.callbacks import CallbackManager
-from llama_index.core.callbacks import LlamaDebugHandler
 
 from llama_index.core.node_parser import SentenceSplitter
 splitter = SentenceSplitter(chunk_size=2048)
@@ -46,18 +27,6 @@ response_synthesizer = get_response_synthesizer(
     response_mode="tree_summarize", use_async=True
 )
 
-
-def get_completion(prompt, model="gpt-3.5-turbo", temperature=0):
-    messages = [
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": prompt},
-        ]
-    response = openai.chat.completions.create(model=model,
-                                              messages=messages,
-                                              temperature=temperature
-                                              
-                                              )
-    return response.choices[0].message.content
 
 def create_retrieve_index(index_path, docs_path, index_type, file_name):
     if not os.path.exists(index_path):
@@ -108,7 +77,7 @@ def get_ipa_rag(query_engine, text):
 
 def get_ipa_openai(prompt, model="gpt-3.5-turbo", temperature=0):
     messages = [
-        {"role": "system", "content": "You provide IPA translations of text, nothing else."},
+        {"role": "system", "content": "You provide IPA translations of text using only your own knowledge, nothing else."},
         {"role": "user", "content": prompt},
         ]
     response = openai.chat.completions.create(model=model,
@@ -120,7 +89,7 @@ def get_ipa_openai(prompt, model="gpt-3.5-turbo", temperature=0):
 
 def edit_distance(str1, str2):
     """
-    Calculate the edit distance between two strings
+    Calculates the edit distance between two strings
     """
     m = len(str1)
     n = len(str2)
@@ -141,7 +110,7 @@ def edit_distance(str1, str2):
 
 def normalized_edit_distance(str1, str2):
     """
-    Calculate the normalized edit distance between two strings using the average lenght of the strings
+    Calculates the normalized edit distance between two strings using the average lenght of the strings
     """
     return edit_distance(str1, str2) / ((len(str1)+ len(str2))/2)
 
