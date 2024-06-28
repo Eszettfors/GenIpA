@@ -1,7 +1,7 @@
 import os
 import openai
 
-os.environ["OPENAI_API_KEY"] = "sk-proj-ati0Co2Vt8anHxAf9emxT3BlbkFJzBBqjuNyNos5W71ryVtc"
+os.environ["OPENAI_API_KEY"] = None
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 import shutil
