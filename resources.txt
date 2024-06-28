@@ -1,2 +1,0 @@
-https://netraneupane.medium.com/retrieval-augmented-generation-rag-using-llamaindex-and-mistral-7b-228f93ba670f; setting up rag
-https://docs.llamaindex.ai/en/stable/examples/low_level/oss_ingestion_retrieval/ ; setting up rag
