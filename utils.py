@@ -78,12 +78,12 @@ def get_ipa_rag(query_engine, text):
 def get_ipa_openai(prompt, model="gpt-3.5-turbo", temperature=0, lang = None):
     if lang != None:
         messages = [
-            {"role": "system", "content": "You provide IPA translations of text in " + lang + " using only your own knowledge, nothing else."},
+            {"role": "system", "content": "You will be provided with a string of text in " + lang + ". Answer with an IPA transcirption of it, using only your own knowledge, nothing else."},
             {"role": "user", "content": prompt},
             ]
     else:
         messages = [
-            {"role": "system", "content": "You provide IPA translations of text using only your own knowledge, nothing else."},
+            {"role": "system", "content": "You will be provided with a string of text. Answer with an IPA transcirption of it, using only your own knowledge, nothing else."},
             {"role": "user", "content": prompt},
             ]
     response = openai.chat.completions.create(model=model,
